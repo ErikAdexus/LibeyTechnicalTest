@@ -1,0 +1,30 @@
+<div class="container my-5">
+    <h2 class="mb-3">Usuarios</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Ver</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.documentNumber }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.fathersLastName }}</td>
+            <td>{{ user.mothersLastName }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.email }}</td>
+            <td><a [routerLink]="['/users', 'edit', user.documentNumber]">Editar</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
